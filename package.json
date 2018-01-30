@@ -3,7 +3,8 @@
   "version": "1.0.4",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"webpack-dev-server --hot --inline"
   },
   "author": "luojie",
   "license": "ISC",
@@ -12,11 +13,11 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "jquery": "^3.2.1",
-
     "style-loader": "^0.19.1",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {},
   "description": "just for test"

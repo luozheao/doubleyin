@@ -8,6 +8,13 @@ module.exports = {
         filename: 'bundle.js',
         chunkFilename: "[name].min.js"
     },
+    devServer:{
+        historyApiFallback:true,
+        hot:true,
+        inline:true,
+        progress:true,
+        port:9090
+    },
     module: {
         rules: [
             {
