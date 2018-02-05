@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 
 module.exports = {
-    entry: {main:'./js/main.js'},
+    entry: {main:'./javascript/main.js'},
     output: {
         filename: 'bundle.js',
         chunkFilename: "[name].min.js"
@@ -19,24 +19,24 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({fallback: "style-loader", use: [
-                        {
-                            loader: 'css-loader',
-                            options:{
-                                minimize: true //css压缩
-                            }
-                        }
-                    ]}),
-                // use: [ 'style-loader', 'css-loader' ],
+                // use: ExtractTextPlugin.extract({fallback: "style-loader", use: [
+                //         {
+                //             loader: 'css-loader',
+                //             options:{
+                //                 minimize: true //css压缩
+                //             }
+                //         }
+                //     ]}),
+              use: [ 'style-loader', 'css-loader' ],
 
             },
             { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-                use: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'},
+                use: 'url-loader?limit=1111118192&name=images/[name].[ext]?[hash:8]'},
 
         ]
     },
     plugins: [
-         new ExtractTextPlugin("styles.css"),
+         // new ExtractTextPlugin("styles.css"),
          new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
