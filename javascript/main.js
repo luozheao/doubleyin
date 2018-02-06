@@ -8,7 +8,12 @@ window.onload = function () {
         paginationClickable: true,
         direction: 'vertical'
     });
-    document.querySelector('#media').play();
+    var $media=document.querySelector('#media');
+
+    setTimeout(function () {
+        $media.play();
+    },1500);
+
     //页面加载就绪
     document.getElementById("loadBefore").style.display = 'none';
     //返回首页
@@ -24,13 +29,13 @@ window.onload = function () {
             this.classList.remove('rotate');
             this.classList.remove('music01');
             this.classList.add('music02');
-            document.querySelector('#media').pause();
+            $media.pause();
         }else{
             this.setAttribute('isPlay','true');
             this.classList.add('rotate');
             this.classList.remove('music02');
             this.classList.add('music01');
-            document.querySelector('#media').play();
+            $media.play();
         }
     });
     function getTaxNew(money,other)
@@ -75,12 +80,17 @@ window.onload = function () {
 
     //查看弹窗
     //p1
-    document.querySelector('.swiper-slide1 .f,.swiper-slide1 .g').addEventListener('click',function () {
+    document.querySelector('.swiper-slide1 .f').addEventListener('touchstart',function () {
         document.querySelector('.slide1Wrap').classList.add('animatePop');
         document.querySelector('.slide1-h').classList.remove('none');
         document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
     });
-    document.querySelector('.slide1-h').addEventListener('click',function () {
+    document.querySelector('.swiper-slide1 .g').addEventListener('touchstart',function () {
+        document.querySelector('.slide1Wrap').classList.add('animatePop');
+        document.querySelector('.slide1-h').classList.remove('none');
+        document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
+    });
+    document.querySelector('.slide1-h').addEventListener('touchstart',function () {
         document.querySelector('.slide1-h').classList.add('none');
         document.querySelector('.slide1Wrap').classList.remove('animatePop');
         document.querySelector('.slide1-i').classList.remove('none');
@@ -90,53 +100,71 @@ window.onload = function () {
         },3000);
     });
     //p2
-    document.querySelector('.swiper-slide2 .f,.swiper-slide2 .g').addEventListener('click',function () {
+    document.querySelector('.swiper-slide2 .f').addEventListener('touchstart',function () {
         document.querySelector('.slide2-h').classList.remove('none');
         document.querySelector('.slide2Wrap').classList.add('animatePop');
         document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
 
     });
-    document.querySelector('.slide2-h').addEventListener('click',function () {
+    document.querySelector('.swiper-slide2 .g').addEventListener('touchstart',function () {
+        document.querySelector('.slide2-h').classList.remove('none');
+        document.querySelector('.slide2Wrap').classList.add('animatePop');
+        document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
+
+    });
+    document.querySelector('.slide2-h').addEventListener('touchstart',function () {
         document.querySelector('.slide2-h').classList.add('none');
         document.querySelector('.slide2Wrap').classList.remove('animatePop');
         document.querySelector('.slide2-i').classList.remove('none');
     });
-    document.querySelector('.slide2-i').addEventListener('click',function () {
+    document.querySelector('.slide2-i').addEventListener('touchstart',function () {
         document.querySelector('.slide2-i').classList.add('none');
         document.querySelector('.swiper-container').classList.remove('swiper-no-swiping');
     });
 
 
-    document.querySelector('.swiper-slide3 .f,.swiper-slide3 .g').addEventListener('click',function () {
+    document.querySelector('.swiper-slide3 .f').addEventListener('touchstart',function () {
         document.querySelector('.slide3-h').classList.remove('none');
         document.querySelector('.slide3Wrap').classList.add('animatePop');
         document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
 
     });
-    document.querySelector('.slide3-h').addEventListener('click',function () {
+    document.querySelector('.swiper-slide3 .g').addEventListener('touchstart',function () {
+        document.querySelector('.slide3-h').classList.remove('none');
+        document.querySelector('.slide3Wrap').classList.add('animatePop');
+        document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
+
+    });
+    document.querySelector('.slide3-h').addEventListener('touchstart',function () {
         document.querySelector('.slide3-h').classList.add('none');
         document.querySelector('.slide3Wrap').classList.remove('animatePop');
         document.querySelector('.slide3-i').classList.remove('none');
     });
-    document.querySelector('.slide3-i').addEventListener('click',function () {
+    document.querySelector('.slide3-i').addEventListener('touchstart',function () {
         document.querySelector('.slide3-i').classList.add('none');
         document.querySelector('.swiper-container').classList.remove('swiper-no-swiping');
     });
 
 
 
-    document.querySelector('.swiper-slide4 .f,.swiper-slide4 .g').addEventListener('click',function () {
+    document.querySelector('.swiper-slide4 .f').addEventListener('touchstart',function () {
         document.querySelector('.slide4-h').classList.remove('none');
         document.querySelector('.slide4Wrap').classList.add('animatePop');
         document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
 
     });
-    document.querySelector('.slide4-h').addEventListener('click',function () {
+    document.querySelector('.swiper-slide4 .g').addEventListener('touchstart',function () {
+        document.querySelector('.slide4-h').classList.remove('none');
+        document.querySelector('.slide4Wrap').classList.add('animatePop');
+        document.querySelector('.swiper-container').classList.add('swiper-no-swiping');
+
+    });
+    document.querySelector('.slide4-h').addEventListener('touchstart',function () {
         document.querySelector('.slide4-h').classList.add('none');
         document.querySelector('.slide4Wrap').classList.remove('animatePop');
         document.querySelector('.slide4-i').classList.remove('none');
     });
-    document.querySelector('.slide4-i').addEventListener('click',function () {
+    document.querySelector('.slide4-i').addEventListener('touchstart',function () {
         document.querySelector('.slide4-i').classList.add('none');
         document.querySelector('.swiper-container').classList.remove('swiper-no-swiping');
     });
@@ -151,7 +179,7 @@ window.onload = function () {
         }
     })
 
-    document.querySelector('.swiper-slide5 .btn').addEventListener('click',function () {
+    document.querySelector('.swiper-slide5 .btn').addEventListener('touchstart',function () {
         var val=document.querySelector('.swiper-slide5 .money').value;
         var val2=document.querySelector('.swiper-slide5 .other').value;
 

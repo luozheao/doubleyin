@@ -5303,26 +5303,27 @@ else if (typeof define === 'function' && define.amd) {
     });
 }
 //# sourceMappingURL=maps/swiper.js.map
+var $back= document.querySelector('.back');
+var slideArr= document.querySelectorAll(".swiper-slide");
+var $next= document.querySelector('.next');
 function slideEvent(index) {
     if(index==0){
-        document.querySelector('.back').classList.add('none');
+        $back.classList.add('none');
 
     }else{
-        document.querySelector('.back').classList.remove('none');
+        $back.classList.remove('none');
 
     }
-
-    var slideArr= document.querySelectorAll(".swiper-slide");
     for(var i =0;i<slideArr.length;i++){
         slideArr[i].classList.remove('animate');
     }
-   setTimeout(function () {
+    setTimeout(function () {
        document.querySelector(".swiper-slide"+index).classList.add("animate");
-   },500)
-    if(index==5){
-        document.querySelector('.next').classList.add('none');
+    },500)
+    if(index==6){
+        $next.classList.add('none');
     }else{
-        document.querySelector('.next').classList.remove('none');
+        $next.classList.remove('none');
     }
 
 

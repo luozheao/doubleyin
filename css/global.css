@@ -134,8 +134,8 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 }
 /*上下移动*/
 .animate .pointerMove{
-    animation:scaleToBig .5s forwards linear 5s,pointerMove  1s  steps(1, start) normal infinite 6s   ;
-    -webkit-animation:scaleToBig .5s forwards linear 5s,pointerMove  1s  steps(1, start) normal infinite 6s   ;
+    animation:scaleToBig .5s forwards linear 5s,pointerMove  1s   linear   normal infinite 6s   ;
+    -webkit-animation:scaleToBig .5s forwards linear 5s,pointerMove  1s linear    normal infinite 6s   ;
 }
 /*缓缓左右移动*/
 .animate .yunMove01{
@@ -203,8 +203,8 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
     z-index: 101;
 }
 .animate .shakeMoney{
-    animation:scaleToBig 1s forwards linear 2s,shake  3s  steps(1,start) infinite  3s   ;
-    -webkit-animation:scaleToBig 1s forwards linear 2s,shake  3s  steps(1,start) infinite  3s   ;
+    animation:scaleToBig 1s forwards linear 2s,shake  2s  linear infinite  3s   ;
+    -webkit-animation:scaleToBig 1s forwards linear 2s,shake  2s linear infinite  3s   ;
 
 }
 
@@ -282,15 +282,25 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 
 @-webkit-keyframes shake {
-    0%, 100% {-webkit-transform: translateX(0);}
-    10%, 30%, 50%, 70%, 90% {-webkit-transform: rotate(-10deg);}
-    20%, 40%, 60%, 80% {-webkit-transform: rotate(10deg);}
+    0% {-webkit-transform: translateX(-20deg);}
+    25% {-webkit-transform: translateX(-20deg);}
+    25.1% {-webkit-transform: translateX(0);}
+    50% {-webkit-transform: translateX(0);}
+    50.1%{-webkit-transform: rotate(20deg);}
+    75%{-webkit-transform: rotate(20deg);}
+    75.1% {-webkit-transform: translateX(0);}
+    100% {-webkit-transform: translateX(0);}
 }
 
 @keyframes shake {
-    0%, 100% {transform: translateX(0);}
-    10%, 30%, 50%, 70%, 90% {transform: rotate(-10deg);}
-    20%, 40%, 60%, 80% {transform:  rotate(10deg);}
+    0% {transform: translateX(-20deg);}
+    25% {transform: translateX(-20deg);}
+    25.1% {transform: translateX(0);}
+    50% {transform: translateX(0);}
+    50.1%{transform: rotate(20deg);}
+    75%{transform: rotate(20deg);}
+    75.1% {transform: translateX(0);}
+    100% {transform: translateX(0);}
 }
 
 
@@ -419,25 +429,33 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
     }
     50% {
 
-        transform:translateY( 0px);
+        transform:translateY( 50px);
+    }
+    50.1% {
+
+        transform:translateY(0);
     }
     100% {
 
-        transform:translateY(50px);
+        transform:translateY(0);
     }
 }
 @-webkit-keyframes pointerMove {
     0% {
 
-        transform:translateY( 50px);
+        -webkit-transform:translateY( 50px);
     }
     50% {
 
-        transform:translateY( 0px);
+        -webkit-transform:translateY( 50px);
+    }
+    50.1% {
+
+        -webkit-transform:translateY(0);
     }
     100% {
 
-        transform:translateY(50px);
+        -webkit-transform:translateY(0);
     }
 }
 @keyframes yunMove01 {
@@ -656,7 +674,8 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 .swiper-slide2,
 .swiper-slide3,
 .swiper-slide4,
-.swiper-slide5 {
+.swiper-slide5,
+.swiper-slide6{
     background:url(../images/bg01.jpg) repeat;
 }
 
@@ -737,8 +756,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 .swiper-slide2 .a {
     width: 602px;
     height: 724px;
-
-    background: url(../images/page.png) no-repeat 0px -6028.6px;
+    background: url(../images/a1.png) no-repeat;
     left: 10px;
     top: 220px;
 }
@@ -803,12 +821,12 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
     top: 200px;
     width:590px;
     height:799px;
-    background: url(../images/page.png) no-repeat 0px -11296px;
+    background: url(../images/a2.png) no-repeat;
 }
 .swiper-slide3 .b{opacity:0;width:499px;height:185px;background: url(../images/txt.png) no-repeat 0px -1093px;top: 100px;right: 70px;}
 .swiper-slide3 .c{opacity:0;width:278px;height:112px;background:url(../images/txt.png) no-repeat 0px -1279px;top: 320px;left: 30px;}
 .swiper-slide3 .d{opacity:0;width:444px;height:117px;background:url(../images/txt.png) no-repeat 0px -1391px;right: 10px;top: 550px;}
-.swiper-slide3 .e{opacity:0;width:403px;height:162px;background: url(../images/txt.png) no-repeat 0px -1509px;left: 130px;top: 700px;}
+.swiper-slide3 .e{opacity:0;width:403px;height:162px;background: url(../images/txt.png) no-repeat 0px -1508px;left: 130px;top: 700px;}
 
 .swiper-slide3 .f{
 
@@ -860,7 +878,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
     top: 150px;
     width:557px;
     height:834px;
-    background: url(../images/page.png) no-repeat 0px -14366px;
+    background: url(../images/a3.png) no-repeat;
 }
 
 
@@ -962,7 +980,11 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
     left: 185px;
     z-index: 500;
 }
-
+.swiper-slide6 .a{
+    width:640px;
+    height: 938px;
+    background: url("../images/p7.png") no-repeat;
+}
 
 .none{
     display: none;

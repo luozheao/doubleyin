@@ -1,10 +1,11 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
-
-
+var path = require('path');
+var buildDir = path.resolve(__dirname,'./javascript');
 module.exports = {
     entry: {main:'./javascript/main.js'},
     output: {
+        path:buildDir,
         filename: 'bundle.js',
         chunkFilename: "[name].min.js"
     },
