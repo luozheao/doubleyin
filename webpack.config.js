@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 var path = require('path');
-var buildDir = path.resolve(__dirname,'./javascript');
+var buildDir = path.resolve(__dirname,'./js');
 module.exports = {
     entry: {main:'./javascript/main.js'},
     output: {
