@@ -4,7 +4,8 @@
   "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"webpack-dev-server --hot --inline --host 0.0.0.0"
+    "start":"webpack-dev-server --hot --inline --host 0.0.0.0",
+    "dist":"webpack"
   },
   "author": "luojie",
   "license": "ISC",

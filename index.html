@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=640, user-scalable=no">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /**加载之前START*/
+        .loadBefore{position: absolute; width: 100%; height: 100%; z-index: 1000; background-color: #666;}
+        .spinner{width: 60px; height: 60px; position: absolute; top: 50%; left: 50%; margin-top: -30px; margin-left: -30px;}
+        .double-bounce1, .double-bounce2{width: 100%; height: 100%; border-radius: 50%; background-color: #fff100; opacity: 0.6; position: absolute; top: 0; left: 0; -webkit-animation: bounceTag 2.0s infinite ease-in-out; animation: bounceTag 2.0s infinite ease-in-out;}
+        .double-bounce2{-webkit-animation-delay: -1.0s; animation-delay: -1.0s;}
+        @-webkit-keyframes bounceTag{0%, 100%{-webkit-transform: scale(0.0);} 50%{-webkit-transform: scale(1.0);}
+        }
+        @keyframes bounceTag{0%, 100%{transform: scale(0.0); -webkit-transform: scale(0.0);} 50%{transform: scale(1.0); -webkit-transform: scale(1.0);}
+        }
+        /**加载之前END*/
+    </style>
+</head>
+
+<body>
+<!--登陆之前加载状态START-->
+<div class="loadBefore" id="loadBefore">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+    <div class="swiper-container ">
+         <div class="logo absolute "></div>
+         <div id="music" isPlay="true" class=" music rotate  music01 absolute">
+                <audio loop="loop"  autoplay="autoplay" src="./dist/music.mp3" id="media" preload></audio>
+         </div>
+        <div class="back none absolute"></div>
+        <!--弹窗，start-->
+        <div class="slide1Wrap   slideWrap">
+            <div class="slide1-h relative none toBottom duration500">
+                <div class="woman toRightPop duration500 delay1000"></div>
+                <div class="close close1"></div>
+            </div>
+            <div class="slide1-i none"></div>
+        </div>
+
+        <div class="slide2Wrap   slideWrap">
+            <div class="slide2-h relative none toBottom duration500">
+                <div class="woman toRightPop duration500 delay1000"></div>
+                <div class="close close2"></div>
+            </div>
+            <div class="slide2-i none"></div>
+        </div>
+
+        <div class="slide3Wrap   slideWrap">
+            <div class="slide3-h relative none toBottom duration500">
+                <div class="woman toRightPop duration500 delay1000"></div>
+                <div class="close close3"></div>
+            </div>
+            <div class="slide3-i none"></div>
+        </div>
+
+        <div class="slide4Wrap   slideWrap">
+            <div class="slide4-h relative none toBottom duration500">
+                <div class="woman toRightPop duration500 delay1000"></div>
+                <div class="close close4"></div>
+            </div>
+            <div class="slide4-i none"></div>
+        </div>
+        <!--弹窗，end-->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide0">
+                 <div class="yun01 yunMove yunMove01"></div>
+                 <div class="yun02 yunMove yunMove02"></div>
+                 <div class="yun03 yunMove yunMove03"></div>
+                 <div class="a toRight duration1000"></div>
+                 <div class="b toLeft duration1000"></div>
+                 <div class="c scaleToBig duration1500 delay1000"></div>
+                 <div class="d scaleToBig duration1500 delay2000"></div>
+                 <div class="e scaleToBig duration1500 delay3000"></div>
+                 <div class="f"></div>
+            </div>
+            <div class="swiper-slide swiper-slide1">
+                <div class="denglong absolute"></div>
+                <div class="fu"></div>
+                <div class="people "></div>
+                <div class="a toLeft duration1500"></div>
+                <div class="b toRight duration1500 delay1500"></div>
+                <div class="c toLeft duration1500 delay3000"></div>
+                <div class="d toRight duration1500 delay4500"></div>
+                <div class="e toLeft duration1500 delay6000"></div>
+                <div class="f pointerMove   delay7500"></div>
+                <div class="g shakeMoney delay7500"></div>
+            </div>
+            <div class="swiper-slide swiper-slide2">
+                <div class="denglong absolute"></div>
+                <div class="fu"></div>
+                <div class="a  "></div>
+                <div class="b toLeft duration1500 "></div>
+                <div class="c   toRight duration1500 delay1500 "></div>
+                <div class="f  pointerMove delay3000"></div>
+                <div class="g shakeMoney delay3000"></div>
+
+            </div>
+            <div class="swiper-slide swiper-slide3">
+                <div class="denglong absolute"></div>
+                <div class="fu"></div>
+                <div class="a "></div>
+                <div class="b  toLeft duration1500"></div>
+                <div class="c toRight duration1500 delay1500 "></div>
+                <div class="d toLeft duration1500 delay3000"></div>
+                <div class="e toRight duration1500 delay4500"></div>
+                <div class="f  pointerMove delay6000"></div>
+                <div class="g shakeMoney delay6000"></div>
+
+
+            </div>
+            <div class="swiper-slide swiper-slide4">
+                <div class="denglong absolute"></div>
+                <div class="fu"></div>
+                <div class="a  "></div>
+                <div class="b  toRight duration1500 "></div>
+                <div class="c  toLeft duration1500 delay1500"></div>
+                <div class="f  pointerMove delay3000"></div>
+                <div class="g shakeMoney delay3000"></div>
+
+
+            </div>
+            <div class="swiper-slide swiper-slide5">
+                <div class="a">
+                    <div class="absolute btn"></div>
+                    <input  class="absolute money" type="number">
+                    <input  class="absolute other"  value="0"  type="number">
+                    <div class="absolute result">*********元</div>
+                </div>
+            </div>
+            <div class="swiper-slide swiper-slide6">
+                  <img src="./dist/css/p7.png">
+            </div>
+        </div>
+        <div class="next absolute toNext"></div>
+    </div>
+</body>
+<script  src="./dist/swiper.js"></script>
+<script  src="./dist/bundle.js"></script>
+</html>

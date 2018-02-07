@@ -1,6 +1,21 @@
 import '../css/base.css'
 import '../css/global.css'
 import '../css/swiper.css'
+function audioAutoPlay(id){
+    var audio = document.getElementById(id),
+        play = function(){
+            audio.play();
+            document.removeEventListener("touchstart",play, false);
+        };
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function() {
+        play();
+    }, false);
+    document.addEventListener("touchstart",play, false);
+}
 
 window.onload = function () {
     var swiper = new Swiper('.swiper-container', {
@@ -10,12 +25,13 @@ window.onload = function () {
     });
     var $media=document.querySelector('#media');
 
-    setTimeout(function () {
-        $media.play();
-    },1500);
+
+
+    audioAutoPlay('media');
 
     //页面加载就绪
     document.getElementById("loadBefore").style.display = 'none';
+
     //返回首页
     document.querySelector('.back').addEventListener('touchstart',function (ev) {
         swiper.slideTo(0);
@@ -24,7 +40,6 @@ window.onload = function () {
     document.querySelector('#music').addEventListener('touchstart',function () {
         var  isPlay= this.getAttribute('isPlay')=='true';
         if(isPlay){
-
             this.setAttribute('isPlay','false');
             this.classList.remove('rotate');
             this.classList.remove('music01');
